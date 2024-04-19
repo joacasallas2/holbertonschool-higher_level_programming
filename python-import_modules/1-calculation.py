@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 # Auhor: Joana Casallas
-"""
-program that imports functions from the file calculator_1.py,
-does some Maths.
-"""
+"""program that imports functions and does some Maths."""
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
 
