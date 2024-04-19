@@ -2,7 +2,7 @@
 # Auhor: Joana Casallas
 """
 program that imports functions from the file calculator_1.py,
-does some Maths, and prints the result.
+does some Maths.
 """
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
