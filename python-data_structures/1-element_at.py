@@ -8,6 +8,6 @@ def element_at(my_list, idx):
     If idx is negative or if idx is out of range the function return None
     """
     lenght = len(my_list)
-    if idx > 0 and idx < lenght:
+    if idx >= 0 and idx < lenght:
         return my_list[idx]
     return None
