@@ -10,6 +10,6 @@ def replace_in_list(my_list, idx, element):
     not modify anything, and returns the original list
     """
     lenght = len(my_list)
-    if idx < lenght - 1 and idx >= 0:
+    if idx < lenght and idx >= 0:
         my_list[idx] = element
     return my_list
