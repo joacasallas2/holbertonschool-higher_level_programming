@@ -4,7 +4,7 @@ def multiple_returns(sentence):
     """
     return a tuple with the length of a string and its first character.
     """
-    lenght = len(sentence)
     if sentence is None:
-        return (lenght, "None")
+        return (0, "None")
+    lenght = len(sentence)
     return (lenght, sentence[0])
