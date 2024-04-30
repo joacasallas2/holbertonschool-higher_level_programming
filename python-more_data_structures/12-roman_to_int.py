@@ -9,14 +9,14 @@ def roman_to_int(roman_string):
         "C": 100, "D": 500,
         "M": 1000
     }
-    if roman_string == "":
-        return 0
-    for i in range(len(roman_string)):
-        if i != 0:
-            if roman_string[i] != "I" and roman_string[i - 1] == "I":
-                num += roman_dict[roman_string[i]] - 2
+    if roman_string != "":
+        for i in range(len(roman_string)):
+            if i != 0:
+                if roman_string[i] != "I" and roman_string[i - 1] == "I":
+                    num += roman_dict[roman_string[i]] - 2
+                else:
+                    num += roman_dict[roman_string[i]]
             else:
                 num += roman_dict[roman_string[i]]
-        else:
-            num += roman_dict[roman_string[i]]
-    return num
+        return num
+    return 0
