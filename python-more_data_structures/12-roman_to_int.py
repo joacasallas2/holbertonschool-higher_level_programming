@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
         "C": 100, "D": 500,
         "M": 1000
     }
-    if roman_string != "":
+    if roman_string != "" and isinstance(roman_string, str):
         for i in range(len(roman_string)):
             if i != 0:
                 if roman_string[i] != "I" and roman_string[i - 1] == "I":
