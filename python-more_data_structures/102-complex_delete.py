@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 # Author: Joana Casallas
 def complex_delete(a_dictionary, value):
     """delete keys with a specific value in a dictionary."""
