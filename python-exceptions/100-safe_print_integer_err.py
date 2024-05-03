@@ -9,6 +9,6 @@ def safe_print_integer_err(value):
         if isinstance(value, int):
             print("{:d}".format(value))
             return True
-    except TypeError:
+    except (TypeError, ValueError):
         sys.stderr.write("TypeError")
         return False
