@@ -6,10 +6,8 @@ import sys
 def safe_print_integer_err(value):
     """print an integer."""
     try:
-        if isinstance(value, int):
-            print("{:d}".format(value))
-            return True
+        print("{:d}".format(value))
+        return True
     except (TypeError, ValueError):
         sys.stderr.write("False")
-        sys.stdout.write("False")
         return False
