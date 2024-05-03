@@ -10,5 +10,5 @@ def safe_print_integer_err(value):
             print("{:d}".format(value))
             return True
     except TypeError:
-        sys.stderr.write("TypeError")
+        sys.stderr.write("False")
         return False
