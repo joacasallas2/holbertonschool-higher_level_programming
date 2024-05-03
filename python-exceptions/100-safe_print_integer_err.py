@@ -11,4 +11,5 @@ def safe_print_integer_err(value):
             return True
     except (TypeError, ValueError):
         sys.stderr.write("False")
+        sys.stdout.write("False")
         return False
