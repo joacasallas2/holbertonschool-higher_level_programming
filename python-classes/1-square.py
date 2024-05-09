@@ -1,23 +1,15 @@
 #!/usr/bin/python3
 # Author: Joana Casallas
-"""1-square
-
-Module 1-square: define a class that define a Square
-
-"""
+"""Define a class Square"""
 
 
 class Square:
-    """
-     class Square that defines a square
-
-    Args:
-        size (int): The size of the square.
-
-    Attributes:
-        size (int): Private instance attribute
-    """
+    """class Square that defines a square"""
 
     def __init__(self, size):
-        """Initializes the data"""
-        self._size = size
+        """Initializes the data
+
+        Args:
+            size (int): The size of the square.
+        """
+        self.__size = size
