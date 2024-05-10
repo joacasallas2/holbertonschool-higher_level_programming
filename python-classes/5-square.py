@@ -28,4 +28,13 @@ class Square:
 
     def area(self):
         """return the area of the square"""
-        return self.__size ** 2
+        return self.size ** 2
+
+    def my_print(self):
+        """print in stdout the square with the character #"""
+        if self.size == 0:
+            print(end="\n")
+        for i in range(self.size):
+            for j in range(self.size):
+                print("#", end="")
+            print(end="\n")
