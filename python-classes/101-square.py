@@ -62,11 +62,12 @@ class Square:
 
     def __str__(self):
         """print in stdout the square with the character #"""
-        for i in range(self.position[1]):
-            print(end="\n")
-        for i in range(self.size):
-            [print(" ", end="") for j in range(self.position[0])]
-            [print("#", end="") for j in range(self.size)]
-            if i < self.size - 1:
+        if self.size != 0:
+            for i in range(self.position[1]):
                 print(end="\n")
+            for i in range(self.size):
+                [print(" ", end="") for j in range(self.position[0])]
+                [print("#", end="") for j in range(self.size)]
+                if i < self.size - 1:
+                    print(end="\n")
         return ""
