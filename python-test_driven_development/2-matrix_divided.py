@@ -14,11 +14,11 @@ def matrix_divided(matrix, div):
 
     Return: A new matrix
     """
-    if not isinstance(div, (int, float)):
+    if not isinstance(div, (int, float)) or div is None:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    if not isinstance(matrix, list):
+    if not isinstance(matrix, list) or matrix is None:
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
     lenght = len(matrix[0])
