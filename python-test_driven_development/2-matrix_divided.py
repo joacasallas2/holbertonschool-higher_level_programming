@@ -12,7 +12,13 @@ def matrix_divided(matrix, div):
         matrix (list): must be a list of lists of integers or floats
         div (integer or float): The division number
 
-    Return: A new matrix
+    Raises:
+        - TypeError: matrix must be a matrix (list of lists) of integers/floats
+        - TypeError: div must be a number
+        - ZeroDivisionError: division by zero
+        - TypeError: Each row of the matrix must have the same size
+
+    Return: A new matrix with the result
     """
     if not isinstance(div, (int, float)) or div is None:
         raise TypeError("div must be a number")
