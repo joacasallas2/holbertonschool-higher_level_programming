@@ -5,17 +5,26 @@ max_integer = __import__('6-max_integer').max_integer
 
 class TestStringMethods(unittest.TestCase):
 
-    def test_max_integer(self):
-        list_case = [1, 2, 3, 4]
-        self.assertEqual(print(max_integer(list_case)), None)
+    def test_max_at_the_end(self):
+        self.assertEqual((max_integer([1, 2, 3, 4])), 4)
 
-    def test_len_list(self):
-        list_case = []
-        self.assertEqual(len(list_case) == 0, True)
+    def test_max_at_the_beginning(self):
+        self.assertEqual((max_integer([4, 2, 3, 1])), 4)
 
-    def test_is_list(self):
-        list_case = 3
-        self.assertFalse(isinstance(list_case, list))
+    def test_max_in_the_middle(self):
+        self.assertEqual((max_integer([0, 2, 4, 1, 3])), 4)
+
+    def test_one_negative_number(self):
+        self.assertEqual((max_integer([0, 2, 4, -1, 3])), 4)
+
+    def test_only_negative_numbers(self):
+        self.assertEqual((max_integer([-2, -4, -1, -3])), -1)
+
+    def test_list_of_one_element(self):
+        self.assertEqual((max_integer([-3])), -3)
+
+    def test_list_is_empty(self):
+        self.assertEqual((max_integer([])), None)
 
 
 if __name__ == '__main__':
