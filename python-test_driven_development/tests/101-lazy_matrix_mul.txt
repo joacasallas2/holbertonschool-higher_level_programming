@@ -25,10 +25,25 @@ Check if m_a and m_b are lists:
         ...
     TypeError: m_a must be a list
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], "hola")
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], "Holberton")
     Traceback (most recent call last):
         ...
     TypeError: m_b must be a list
+    
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], "hola")
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b must be a list
+    
+    >>> lazy_matrix_mul([[]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_a can't be empty
+    
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], [[]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_b can't be empty
 
 
 Check if m_a and m_b are lists:
@@ -84,6 +99,16 @@ Check if all elements in m_a and m_b are either integers or floats:
         ...
     TypeError: m_b should contain only integers or floats
 
+    >>> lazy_matrix_mul([[5, "6"], [7, 8]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_a should contain only integers or floats
+
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], [[5, "6"], [7, 8]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b should contain only integers or floats
+
 
 Check if m_a or m_b is not a rectangle:
 
@@ -98,10 +123,25 @@ Check if m_a or m_b is not a rectangle:
         ...
     TypeError: each row of m_a must be of the same size
 
+    >>> lazy_matrix_mul([[5, 6, 10], [7, 8]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+        ...
+    TypeError: each row of m_a must be of the same size
+
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], [[5, 6, 1], [7, 8]])
+    Traceback (most recent call last):
+        ...
+    TypeError: each row of m_b must be of the same size
+
 Check if m_a and m_b can’t be multiplied:
 
 ::
     >>> lazy_matrix_mul([[1, 2, 3]], [[3, 4], [5, 6]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
     ValueError: m_a and m_b can't be multiplied
