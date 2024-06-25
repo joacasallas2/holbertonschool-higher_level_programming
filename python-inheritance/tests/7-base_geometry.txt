@@ -8,6 +8,7 @@ This library has one class called
 Usage
 ======
 
+The method integer_validator("name", "John")
 ::
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg = BaseGeometry()
@@ -23,3 +24,10 @@ Usage
     Traceback (most recent call last):
         ...
     ValueError: distance must be greater than 0
+
+The method area() is not implemented:
+::
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
