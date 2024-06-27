@@ -7,4 +7,3 @@ def class_to_json(obj):
     """ returns the dictionary description with simple data structure"""
     dict_obj = obj.__dict__
     return dict_obj
-
