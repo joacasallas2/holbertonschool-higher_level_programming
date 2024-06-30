@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # Author: Joana Casallas
-"""This module provides a script that reads stdin
-line by line and computes metrics:"""
+""" This module provides a script that reads stdin
+line by line and computes metrics """
 import sys
 import signal
 
