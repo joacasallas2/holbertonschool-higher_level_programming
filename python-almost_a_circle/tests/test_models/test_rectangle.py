@@ -27,17 +27,29 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(r3.id, 12)
 
+    def test_width_assignemt(self):
+        """Test of Rectangle class for assigning an width value exists"""
+        r4 = Rectangle(1, 2)
+
+        self.assertEqual(r4.width, 1)
+
+    def test_height_assignemt(self):
+        """Test of Rectangle class for assigning an height value exists"""
+        r5 = Rectangle(1, 2, 3, 4)
+
+        self.assertEqual(r5.height, 2)
+
     def test_x_assignemt(self):
         """Test of Rectangle class for assigning an x value exists"""
-        r4 = Rectangle(1, 2, 3)
+        r6 = Rectangle(1, 2, 3)
 
-        self.assertEqual(r4.x, 3)
+        self.assertEqual(r6.x, 3)
 
     def test_y_assignemt(self):
         """Test of Rectangle class for assigning an y value exists"""
-        r5 = Rectangle(1, 2, 3, 4)
+        r7 = Rectangle(1, 2, 3, 4)
 
-        self.assertEqual(r5.y, 4)
+        self.assertEqual(r7.y, 4)
 
 if __name__ == "__main__":
     unittest.main()
