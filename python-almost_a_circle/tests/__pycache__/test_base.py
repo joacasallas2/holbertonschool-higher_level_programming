@@ -7,7 +7,7 @@ from models.base import Base
 
 
 class TestBaseAssigningID(unittest.TestCase):
-    """group of tests of Base() for assigning an ID"""
+    """group of tests of Base class for assigning an ID"""
     def test_auto_id_assignemt_automatically(self):
         """Test of Base() for assigning automatically an ID exists"""
         b1 = Base()
@@ -19,7 +19,7 @@ class TestBaseAssigningID(unittest.TestCase):
         self.assertEqual(b3.id, 3)
 
     def test_manual_id_assignemt(self):
-        """Test of Base() for assigning an manual ID exists"""
+        """Test of Base class for assigning an manual ID exists"""
         b4 = Base(12)
         b5 = Base(13)
 

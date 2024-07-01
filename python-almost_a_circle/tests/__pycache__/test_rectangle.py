@@ -7,9 +7,9 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    """test of Rectangle() for assigning an ID"""
+    """test for the Rectangle class"""
     def test_rectangle(self):
-        """Test of Base() for assigning automatically an ID exists"""
+        """test of Rectangle() for existing"""
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
         r3 = Rectangle(10, 2, 0, 0, 12)
