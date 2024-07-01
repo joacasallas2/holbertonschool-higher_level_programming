@@ -7,7 +7,7 @@ from models.base import Base
 
 
 class TestBaseAssigningID(unittest.TestCase):
-    """group of tests of Base class for assigning an ID"""
+    """group of tests of Base class"""
     def setUp(self):
         "setup for test cases"
         Base._Base__nb_objects = 0
