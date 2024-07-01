@@ -8,6 +8,10 @@ from models.base import Base
 
 class TestBaseAssigningID(unittest.TestCase):
     """group of tests of Base class for assigning an ID"""
+    def setUp(self):
+        "setup for test cases"
+        Base._Base__nb_objects = 0
+
     def test_auto_id_assignemt_automatically(self):
         """Test of Base() for assigning automatically an ID exists"""
         b1 = Base()
