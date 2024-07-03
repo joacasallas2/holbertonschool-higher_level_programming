@@ -89,3 +89,9 @@ class Rectangle(Base):
         """prints in stdout the Rectangle with the character #"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
 {self.width}/{self.height}"
+
+    def update(self, *args):
+        """assigns an argument to each attribute"""
+        list_args = ["id", "width", "height", "x", "y"]
+        for i, arg in enumerate(args):
+            setattr(self, list_args[i], arg)
