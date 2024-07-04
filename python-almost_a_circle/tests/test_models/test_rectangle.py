@@ -52,10 +52,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r7.y, 4)
 
     def test_str_raise_exception(self):
-        """Test of Rectangle class for assigning an y value exists"""
-        r8 = Rectangle(1, 2, 3, 4)
+        """Test of Rectangle class for raising an exception"""
+        with self.assertRaises(TypeError):
+            r8 = Rectangle("1", 2)
 
-        self.assertEqual(r8.y, 4)
 
 if __name__ == "__main__":
     unittest.main()
