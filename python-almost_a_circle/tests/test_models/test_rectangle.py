@@ -113,7 +113,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(captured_output.getvalue(), expected_output)
 
         r22 = Rectangle(2, 3, 2)
-        expected_output = " ##\n ##\n ##\n"
+        expected_output = "  ##\n  ##\n  ##\n"
         captured_output = io.StringIO()
         sys.stdout = captured_output
         try:
