@@ -131,8 +131,7 @@ class TestRectangle(unittest.TestCase):
         finally:
             sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), expected_output)
-
-
+    
 
 if __name__ == "__main__":
     unittest.main()

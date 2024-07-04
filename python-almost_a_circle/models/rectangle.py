@@ -86,7 +86,7 @@ class Rectangle(Base):
             print(end="\n")
 
     def __str__(self):
-        """prints in stdout the Rectangle with the character #"""
+        """prints in stdout the Rectangle"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
 {self.width}/{self.height}"
 
