@@ -3,6 +3,8 @@
 """Tests"""
 
 import unittest
+import io
+import sys
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -82,13 +84,20 @@ class TestRectangle(unittest.TestCase):
     def test_display_exists(self):
         """Test display() exists"""
         r19 = Rectangle(2, 2)
-        self.assertEqual(r19.display(), [["#", "#"], ["#", "#"]])
+        expected_output = "##\n##\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        r19.display()
+        self.assertEqual(captured_output.getvalue(), expected_output)
 
     def test_str_exists(self):
         """Test __str__() exists"""
         r20 = Rectangle(4, 6, 2, 1, 12)
-        self.assertEqual(print(r20), "[Rectangle] (12) 2/1 - 4/6")
-
+        expected_output = "[Rectangle] (12) 2/1 - 4/6\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        print(r20)
+        self.assertEqual(captured_output.getvalue(), expected_output)
 
 
 if __name__ == "__main__":
