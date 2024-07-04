@@ -55,6 +55,12 @@ class TestRectangle(unittest.TestCase):
         """Test of Rectangle class for raising an exception"""
         with self.assertRaises(TypeError):
             r8 = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            r9 = Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            r10 = Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            r11 = Rectangle(1, 2, 3, "4")
 
 
 if __name__ == "__main__":
