@@ -75,9 +75,20 @@ class TestRectangle(unittest.TestCase):
             r17 = Rectangle(1, 2, 3, -4)
 
     def test_area_exists(self):
-        """Test of area() exists"""
+        """Test area() exists"""
         r18 = Rectangle(3, 2)
         self.assertEqual(r18.area(), 6)
+
+    def test_display_exists(self):
+        """Test display() exists"""
+        r19 = Rectangle(2, 2)
+        self.assertEqual(r19.display(), [["#", "#"], ["#", "#"]])
+
+    def test_str_exists(self):
+        """Test __str__() exists"""
+        r20 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(print(r20), "[Rectangle] (12) 2/1 - 4/6")
+
 
 
 if __name__ == "__main__":
