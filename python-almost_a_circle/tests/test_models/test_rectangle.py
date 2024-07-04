@@ -51,7 +51,7 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(r7.y, 4)
 
-    def test_str_raise_exception(self):
+    def test_raise_exception(self):
         """Test of Rectangle class for raising an exception"""
         with self.assertRaises(TypeError):
             r8 = Rectangle("1", 2)
@@ -73,6 +73,11 @@ class TestRectangle(unittest.TestCase):
             r16 = Rectangle(1, 2, -3)
         with self.assertRaises(ValueError):
             r17 = Rectangle(1, 2, 3, -4)
+
+    def test_area_exists(self):
+        """Test of area() exists"""
+        r18 = Rectangle(3, 2)
+        self.assertEqual(r18.area(), 6)
 
 
 if __name__ == "__main__":
