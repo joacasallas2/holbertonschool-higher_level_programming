@@ -81,23 +81,57 @@ class TestRectangle(unittest.TestCase):
         r18 = Rectangle(3, 2)
         self.assertEqual(r18.area(), 6)
 
-    def test_display_exists(self):
-        """Test display() exists"""
-        r19 = Rectangle(2, 2)
-        expected_output = "##\n##\n"
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        r19.display()
-        self.assertEqual(captured_output.getvalue(), expected_output)
-
     def test_str_exists(self):
         """Test __str__() exists"""
-        r20 = Rectangle(4, 6, 2, 1, 12)
+        r19 = Rectangle(4, 6, 2, 1, 12)
         expected_output = "[Rectangle] (12) 2/1 - 4/6\n"
         captured_output = io.StringIO()
         sys.stdout = captured_output
-        print(r20)
+        print(r19)
         self.assertEqual(captured_output.getvalue(), expected_output)
+
+    def test_display_exists(self):
+        """Test display() exists"""
+        r20 = Rectangle(2, 2)
+        expected_output = "##\n##\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            r20.display()
+        finally:
+            sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r21 = Rectangle(2, 3, 2, 2)
+        expected_output = "\n\n  ##\n  ##\n  ##\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            r21.display()
+        finally:
+            sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r22 = Rectangle(2, 3, 2)
+        expected_output = " ##\n ##\n ##\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            r22.display()
+        finally:
+            sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r23 = Rectangle(2, 3, 0, 2)
+        expected_output = "\n\n##\n##\n##\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            r23.display()
+        finally:
+            sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
 
 
 if __name__ == "__main__":
