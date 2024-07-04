@@ -97,3 +97,7 @@ class Rectangle(Base):
         list_args = ["id", "width", "height", "x", "y"]
         for i, arg in enumerate(args):
             setattr(self, list_args[i], arg)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        return self.__dict__
