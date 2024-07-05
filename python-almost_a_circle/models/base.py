@@ -2,6 +2,7 @@
 # Author: Joana Casallas
 """This module provides a class Base"""
 import json
+import os
 
 
 class Base:
@@ -46,9 +47,19 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        if cls.__name__ == "Rectangle":
-            new_instance = cls(1, 1)
-        else:
-            new_instance = cls(1)
+        new_instance = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         new_instance.update(**dictionary)
         return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = f"{cls.__name__}.json"
+        if os.path.exists(filename):
+            with open(filename, "r", encoding="utf-8") as f:
+                data = cls.from_json_string(f.read())
+                list_instances = []
+                for dictionary in data:
+                    list_instances.append(cls.create(**dictionary))
+            return list_instances
+        return []
