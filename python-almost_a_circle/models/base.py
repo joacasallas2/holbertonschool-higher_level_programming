@@ -46,7 +46,6 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        new = cls(**dictionary)
-        for key, value in dictionary.items():
-            setattr(new, key, value)
-        return new
+        new_instance = cls(1, 1)
+        new_instance.update(**dictionary)
+        return new_instance
