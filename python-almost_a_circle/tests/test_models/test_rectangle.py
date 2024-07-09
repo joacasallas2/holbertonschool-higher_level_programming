@@ -131,7 +131,16 @@ class TestRectangle(unittest.TestCase):
         finally:
             sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), expected_output)
-    
+
+    def to_dictionary_exists(self):
+        """Test to_dictionary() exists"""
+        r24 = Rectangle(10, 2, 1, 9)
+        r24_dictionary = r24.to_dictionary()
+        print(r24_dictionary)
+        expected_output = "{'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        self.assertEqual(captured_output.getvalue(), expected_output)
 
 if __name__ == "__main__":
     unittest.main()
