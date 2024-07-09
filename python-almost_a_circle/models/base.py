@@ -91,3 +91,5 @@ class Base:
             draw_shape(pen, rect.x, rect.y, rect.width, rect.height)
         for square in list_squares:
             draw_shape(pen, square.x, square.y, square.width, square.height)
+
+        screen.mainloop()
