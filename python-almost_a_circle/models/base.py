@@ -3,6 +3,7 @@
 """This module provides a class Base"""
 import json
 import os
+import turtle
 
 
 class Base:
@@ -63,3 +64,30 @@ class Base:
                     list_instances.append(cls.create(**dictionary))
             return list_instances
         return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares
+        using the Turtle graphic"""
+        screen = turtle.Screen()
+        screen.title("Draw Rectangles and Squares")
+        pen = turtle.Turtle()
+        pen.speed(1)
+        def draw_shape(pen, x, y, width, height):
+            pen.penup()
+            pen.goto(x, y)
+            pen.pendown()
+            pen.forward(width)
+            pen.left(90)
+            pen.forward(height)
+            pen.left(90)
+            pen.forward(width)
+            pen.left(90)
+            pen.forward(height)
+            pen.left(90)
+            pen.penup()
+
+        for rect in list_rectangles:
+            draw_shape(pen, rect.x, rect.y, rect.width, rect.height)
+        for square in list_squares:
+            draw_shape(pen, square.x, square.y, square.width, square.height)
