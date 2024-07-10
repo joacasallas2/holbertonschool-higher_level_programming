@@ -132,7 +132,7 @@ class TestRectangle(unittest.TestCase):
             sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), expected_output)
 
-    def to_dictionary_exists(self):
+    def test_to_dictionary_exists(self):
         """Test to_dictionary() exists"""
         r24 = Rectangle(10, 2, 1, 9)
         r24_dictionary = r24.to_dictionary()
@@ -143,7 +143,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(captured_output.getvalue(), expected_output)
         self.assertEqual(captured_output.getvalue(), expected_output)
 
-    def to_update_exists(self):
+    def test_update_exists(self):
         """Test update() exists"""
         r25 = Rectangle(10, 10, 10, 10)
         r25.update(89)
