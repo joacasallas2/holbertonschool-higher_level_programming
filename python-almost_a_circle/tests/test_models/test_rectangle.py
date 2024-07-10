@@ -81,17 +81,20 @@ class TestRectangle(unittest.TestCase):
         r18 = Rectangle(3, 2)
         self.assertEqual(r18.area(), 6)
 
-    def test_str_exists(self):
-        """Test __str__() exists"""
+    def test_str(self):
+        """Test __str__()"""
         r19 = Rectangle(4, 6, 2, 1, 12)
         expected_output = "[Rectangle] (12) 2/1 - 4/6\n"
         captured_output = io.StringIO()
         sys.stdout = captured_output
-        print(r19)
+        try:
+            print(r19)
+        finally:
+            sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), expected_output)
 
-    def test_display_exists(self):
-        """Test display() exists"""
+    def test_display(self):
+        """Test display()"""
         r20 = Rectangle(2, 2)
         expected_output = "##\n##\n"
         captured_output = io.StringIO()
@@ -132,66 +135,44 @@ class TestRectangle(unittest.TestCase):
             sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), expected_output)
 
-    def test_to_dictionary_exists(self):
-        """Test to_dictionary() exists"""
+    def test_to_dictionary(self):
+        """Test to_dictionary method in Rectangle class"""
         r24 = Rectangle(10, 2, 1, 9)
         r24_dictionary = r24.to_dictionary()
-        print(r24_dictionary)
         expected_output = "{'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}\n"
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        self.assertEqual(captured_output.getvalue(), expected_output)
-        self.assertEqual(captured_output.getvalue(), expected_output)
+        self.assertEqual(r24_dictionary, expected_output)
 
-    def test_update_exists(self):
-        """Test update() exists"""
+    def test_update(self):
+        """Test update method in Rectangle class"""
         r25 = Rectangle(10, 10, 10, 10)
         r25.update(89)
-        print(r25)
         expected_output = "[Rectangle] (89) 10/10 - 10/10\n"
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        self.assertEqual(captured_output.getvalue(), expected_output)
+        self.assertEqual(str(r25), expected_output)
 
         r26 = Rectangle(10, 10, 10, 10)
         r26.update(89, 2)
-        print(r26)
         expected_output = "[Rectangle] (89) 10/10 - 2/10\n"
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        self.assertEqual(captured_output.getvalue(), expected_output)
+        self.assertEqual(str(r26), expected_output)
 
         r27 = Rectangle(10, 10, 10, 10)
         r27.update(89, 2, 3)
-        print(r27)
         expected_output = "[Rectangle] (89) 10/10 - 2/3\n"
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        self.assertEqual(captured_output.getvalue(), expected_output)
+        self.assertEqual(str(r27), expected_output)
 
         r28 = Rectangle(10, 10, 10, 10)
         r28.update(89, 2, 3, 4)
-        print(r28)
         expected_output = "[Rectangle] (89) 4/10 - 2/3\n"
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        self.assertEqual(captured_output.getvalue(), expected_output)
+        self.assertEqual(str(r28), expected_output)
 
         r29 = Rectangle(10, 10, 10, 10)
         r29.update(89, 2, 3, 4, 5)
-        print(r29)
         expected_output = "[Rectangle] (89) 4/5 - 2/3\n"
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        self.assertEqual(captured_output.getvalue(), expected_output)
+        self.assertEqual(str(r29), expected_output)
 
         r30 = Rectangle(10, 10, 10, 10)
         r30.update()
-        print(r30)
         expected_output = "[Rectangle] (1) 10/10 - 10/10\n"
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
-        self.assertEqual(captured_output.getvalue(), expected_output)
+        self.assertEqual(str(r30), expected_output)
 
 if __name__ == "__main__":
     unittest.main()
