@@ -141,6 +141,17 @@ class TestRectangle(unittest.TestCase):
         captured_output = io.StringIO()
         sys.stdout = captured_output
         self.assertEqual(captured_output.getvalue(), expected_output)
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+    def to_update_exists(self):
+        """Test update() exists"""
+        r25 = Rectangle(10, 10, 10, 10)
+        r25.update(89)
+        print(r25)
+        expected_output = "[Rectangle] (1) 10/10 - 10/10\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        self.assertEqual(captured_output.getvalue(), expected_output)
 
 if __name__ == "__main__":
     unittest.main()
