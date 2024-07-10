@@ -148,6 +148,46 @@ class TestRectangle(unittest.TestCase):
         r25 = Rectangle(10, 10, 10, 10)
         r25.update(89)
         print(r25)
+        expected_output = "[Rectangle] (89) 10/10 - 10/10\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r26 = Rectangle(10, 10, 10, 10)
+        r26.update(89, 2)
+        print(r26)
+        expected_output = "[Rectangle] (89) 10/10 - 2/10\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r27 = Rectangle(10, 10, 10, 10)
+        r27.update(89, 2, 3)
+        print(r27)
+        expected_output = "[Rectangle] (89) 10/10 - 2/3\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r28 = Rectangle(10, 10, 10, 10)
+        r28.update(89, 2, 3, 4)
+        print(r28)
+        expected_output = "[Rectangle] (89) 4/10 - 2/3\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r29 = Rectangle(10, 10, 10, 10)
+        r29.update(89, 2, 3, 4, 5)
+        print(r29)
+        expected_output = "[Rectangle] (89) 4/5 - 2/3\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        r30 = Rectangle(10, 10, 10, 10)
+        r30.update()
+        print(r30)
         expected_output = "[Rectangle] (1) 10/10 - 10/10\n"
         captured_output = io.StringIO()
         sys.stdout = captured_output
