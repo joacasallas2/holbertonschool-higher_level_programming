@@ -139,39 +139,39 @@ class TestRectangle(unittest.TestCase):
         """Test to_dictionary method in Rectangle class"""
         r24 = Rectangle(10, 2, 1, 9)
         r24_dictionary = r24.to_dictionary()
-        expected_output = "{'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}\n"
+        expected_output = {'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9}
         self.assertEqual(r24_dictionary, expected_output)
 
     def test_update(self):
         """Test update method in Rectangle class"""
         r25 = Rectangle(10, 10, 10, 10)
         r25.update(89)
-        expected_output = "[Rectangle] (89) 10/10 - 10/10\n"
+        expected_output = "[Rectangle] (89) 10/10 - 10/10"
         self.assertEqual(str(r25), expected_output)
 
         r26 = Rectangle(10, 10, 10, 10)
         r26.update(89, 2)
-        expected_output = "[Rectangle] (89) 10/10 - 2/10\n"
+        expected_output = "[Rectangle] (89) 10/10 - 2/10"
         self.assertEqual(str(r26), expected_output)
 
         r27 = Rectangle(10, 10, 10, 10)
         r27.update(89, 2, 3)
-        expected_output = "[Rectangle] (89) 10/10 - 2/3\n"
+        expected_output = "[Rectangle] (89) 10/10 - 2/3"
         self.assertEqual(str(r27), expected_output)
 
         r28 = Rectangle(10, 10, 10, 10)
         r28.update(89, 2, 3, 4)
-        expected_output = "[Rectangle] (89) 4/10 - 2/3\n"
+        expected_output = "[Rectangle] (89) 4/10 - 2/3"
         self.assertEqual(str(r28), expected_output)
 
         r29 = Rectangle(10, 10, 10, 10)
         r29.update(89, 2, 3, 4, 5)
-        expected_output = "[Rectangle] (89) 4/5 - 2/3\n"
+        expected_output = "[Rectangle] (89) 4/5 - 2/3"
         self.assertEqual(str(r29), expected_output)
 
         r30 = Rectangle(10, 10, 10, 10)
         r30.update()
-        expected_output = "[Rectangle] (1) 10/10 - 10/10\n"
+        expected_output = "[Rectangle] (6) 10/10 - 10/10"
         self.assertEqual(str(r30), expected_output)
 
 if __name__ == "__main__":
