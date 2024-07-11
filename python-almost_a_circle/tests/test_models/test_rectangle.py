@@ -197,6 +197,28 @@ class TestRectangle(unittest.TestCase):
         expected_output = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
         self.assertEqual(captured_output.getvalue(), expected_output)
 
+        Rectangle.save_to_file([])
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            with open("Rectangle.json", "r") as file:
+                print(file.read())
+        finally:
+            sys.stdout = sys.__stdout__
+        expected_output = '[]\n'
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        Rectangle.save_to_file(None)
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            with open("Rectangle.json", "r") as file:
+                print(file.read())
+        finally:
+            sys.stdout = sys.__stdout__
+        expected_output = '[]\n'
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
 
 if __name__ == "__main__":
     unittest.main()
