@@ -219,6 +219,25 @@ class TestRectangle(unittest.TestCase):
         expected_output = '[]\n'
         self.assertEqual(captured_output.getvalue(), expected_output)
 
+    def test_load_from_file(self):
+        """Test load_from_file() method in Rectangle class"""
+        r35 = Rectangle(10, 7, 2, 8)
+        r36 = Rectangle(2, 4)
+        list_rectangles_input = [r35, r36]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        id1 = id(list_rectangles_output[0])
+        id2 = id(list_rectangles_output[1])
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            for rect in list_rectangles_output:
+                print("[{}] {}".format(id(rect), rect))
+        finally:
+            sys.stdout = sys.__stdout__
+        expected_output = f"[{id1}] [Rectangle] (1) 2/8 - 10/7\n[{id2}] [Rectangle] (2) 0/0 - 2/4\n"
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
 
 if __name__ == "__main__":
     unittest.main()
