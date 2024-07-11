@@ -174,5 +174,14 @@ class TestRectangle(unittest.TestCase):
         expected_output = "[Rectangle] (6) 10/10 - 10/10"
         self.assertEqual(str(r30), expected_output)
 
+    def test_create(self):
+        """Test create method in Rectangle class"""
+        r31 = Rectangle(3, 5, 1)
+        r31_dictionary = r31.to_dictionary()
+        r32 = Rectangle.create(**r31_dictionary)
+        expected_output = "[Rectangle] (1) 1/0 - 3/5"
+        self.assertEqual(str(r32), expected_output)
+
+
 if __name__ == "__main__":
     unittest.main()
