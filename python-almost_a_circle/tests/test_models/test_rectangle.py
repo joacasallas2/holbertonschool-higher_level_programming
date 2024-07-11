@@ -182,6 +182,21 @@ class TestRectangle(unittest.TestCase):
         expected_output = "[Rectangle] (1) 1/0 - 3/5"
         self.assertEqual(str(r32), expected_output)
 
+    def test_save_to_file(self):
+        """Test save_to_file method in Rectangle class"""
+        r33 = Rectangle(10, 7, 2, 8)
+        r34 = Rectangle(2, 4)
+        Rectangle.save_to_file([r33, r34])
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            with open("Rectangle.json", "r") as file:
+                print(file.read())
+        finally:
+            sys.stdout = sys.__stdout__
+        expected_output = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
 
 if __name__ == "__main__":
     unittest.main()

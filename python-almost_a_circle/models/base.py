@@ -73,6 +73,7 @@ class Base:
         screen.title("Draw Rectangles and Squares")
         pen = turtle.Turtle()
         pen.speed(1)
+
         def draw_shape(pen, x, y, width, height):
             pen.penup()
             pen.goto(x, y)
