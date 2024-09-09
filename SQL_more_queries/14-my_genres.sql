@@ -4,12 +4,6 @@ SELECT
 FROM
     tv_genres g
     LEFT JOIN tv_show_genres sg ON sg.genre_id = g.id
+    LEFT JOIN tv_shows s ON s.id = sg.show_id
 WHERE
-    sg.show_id = (
-        SELECT
-            s.id
-        FROM
-            tv_shows s
-        WHERE
-            s.title = 'Dexter'
-    )
+    s.title = 'Dexter';
