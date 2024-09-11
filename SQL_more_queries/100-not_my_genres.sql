@@ -16,3 +16,5 @@ WHERE
     )
 GROUP BY
     g.name
+ORDER BY
+    g.name ASC
