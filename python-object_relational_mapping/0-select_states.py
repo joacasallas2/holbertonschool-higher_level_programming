@@ -3,6 +3,7 @@
 """ List all states from the database hbtn_0e_0_usa """
 import MySQLdb
 
+
 def main():
     """ main function to connect to the database and fetch states."""
     db = MySQLdb.connect(
@@ -24,6 +25,7 @@ def main():
     finally:
         cur.close()
         db.close()
+
 
 if __name__ == "__main__":
     main()
