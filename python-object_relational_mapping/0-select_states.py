@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 # Author: Joana Casallas
 """ List all states from the database hbtn_0e_0_usa """
+import sys
 import MySQLdb
 
 
 def main():
     """ main function to connect to the database and fetch states."""
     db = MySQLdb.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="hbtn_0e_0_usa",
+        host='localhost',
+        user=sys.argv[1],
+        password=sys.argv[2],
+        database=sys.argv[3],
         port=3306)
 
     cur = db.cursor()
