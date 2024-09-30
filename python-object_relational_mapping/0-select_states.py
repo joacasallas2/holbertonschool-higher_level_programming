@@ -10,7 +10,8 @@ def main():
         host="localhost",
         user="root",
         password="",
-        database="hbtn_0e_0_usa")
+        database="hbtn_0e_0_usa",
+        port=3306)
 
     cur = db.cursor()
 
