@@ -18,7 +18,7 @@ def main():
     cur = db.cursor()
 
     try:
-        query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;"
+        query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC;"
         cur.execute(query)
         results = cur.fetchall()
         for row in results:
