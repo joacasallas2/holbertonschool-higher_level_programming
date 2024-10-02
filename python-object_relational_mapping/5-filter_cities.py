@@ -26,9 +26,7 @@ def main():
                  "ORDER BY c.id ASC;")
         cur.execute(query, (sys.argv[4],))
         results = cur.fetchall()
-        for row in results:
-            print(row[0], end=" ")
-        print(end="\n")
+        print(", ".join([row[0] for row in results]))
     except MySQLdb.Error as e:
         print(f"Error: {e}")
     finally:
