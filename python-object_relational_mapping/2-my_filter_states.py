@@ -18,8 +18,11 @@ def main():
     cur = db.cursor()
 
     try:
-        query = ("SELECT * FROM states WHERE name = %s")
-        cur.execute(query, (sys.argv[4], ))
+        query = (
+            "SELECT * FROM states "
+            "WHERE name = '{}' ORDER BY id ASC;".format(sys.argv[4])
+                 )
+        cur.execute(query)
         results = cur.fetchall()
         for row in results:
             print(row)
