@@ -20,7 +20,7 @@ def main():
     try:
         query = (
             "SELECT * FROM states "
-            "WHERE name = '{}' ORDER BY id ASC;".format(sys.argv[4])
+            "WHERE name = BINARY '{}' ORDER BY id ASC;".format(sys.argv[4])
                  )
         cur.execute(query)
         results = cur.fetchall()
