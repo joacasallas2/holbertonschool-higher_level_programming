@@ -2,12 +2,8 @@
 # Author: Joana casallas
 """ This module contains the class definition of City
 and an instance Base = declarative_base() """
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
-
-
-Base = declarative_base()
+from model_state import Base
 
 
 class City(Base):
