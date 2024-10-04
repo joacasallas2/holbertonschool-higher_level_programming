@@ -3,7 +3,7 @@
 """ This module contains the class definition of City
 and an instance Base = declarative_base() """
 from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base
+from relationship_state import Base
 
 
 class City(Base):
@@ -12,4 +12,5 @@ class City(Base):
 
     id = Column(Integer(), primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer(), ForeignKey('states.id'), nullable=False)
+    state_id = Column(Integer(), ForeignKey(
+        'states.id', ondelete='CASCADE'), nullable=False)
