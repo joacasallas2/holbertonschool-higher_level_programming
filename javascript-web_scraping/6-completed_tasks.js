@@ -15,7 +15,7 @@ request(url, function (error, response, body) {
     process.exit(1);
   }
   if (response.statusCode !== 200) {
-    console.error('Error fetching url');
+    console.error('Error fetching URL');
     process.exit(1);
   }
   try {
@@ -27,6 +27,11 @@ request(url, function (error, response, body) {
       }
       if (obj.completed === true) {
         dictUsers[obj.userId] += 1;
+      }
+    }
+    for (const userId in dictUsers) {
+      if (dictUsers[userId] === 0) {
+        delete dictUsers[userId];
       }
     }
     console.log(dictUsers);
